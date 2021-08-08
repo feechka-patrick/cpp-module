@@ -6,15 +6,15 @@
 #    By: nmisfit <nmisfit@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/13 17:18:01 by nmisfit           #+#    #+#              #
-#    Updated: 2021/08/04 19:54:29 by nmisfit          ###   ########.fr        #
+#    Updated: 2021/08/04 21:20:19 by nmisfit          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp Contact.cpp PhoneBook.cpp
+SRC = tests.cpp Account.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-NAME = phonebook
+NAME = test
 
 CC = clang++
 

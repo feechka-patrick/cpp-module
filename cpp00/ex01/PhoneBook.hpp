@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmisfit <nmisfit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/04 19:49:49 by nmisfit           #+#    #+#             */
-/*   Updated: 2021/08/04 19:49:53 by nmisfit          ###   ########.fr       */
+/*   Created: 2021/08/04 19:34:11 by nmisfit           #+#    #+#             */
+/*   Updated: 2021/08/04 20:00:54 by nmisfit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
 
-int	main()
+# include "Contact.hpp"
+# include "iomanip"
+
+# define MAX_SIZE 8
+
+class PhoneBook
 {
-	std::cout << "--PHONEBOOK--";
-	std::string command;
-	std::cout << "\n--> ";
-	std::cin >> command;
+	private:
+		Contact	contacts[MAX_SIZE];
+		int		index;
+	public:
+		PhoneBook(void);
+		void	add(void);
+		void	search(void);
+};
 
-	PhoneBook phonebook;
-	while (command != "EXIT")
-	{
-		if (command == "ADD")
-			phonebook.add();
-		else if (command == "SEARCH")
-			phonebook.search();
-		else
-			std::cout << "COMMAND NOT FOUND. TRY AGAIN.";
-		std::cout << "\n--> ";
-		std::cin >> command;
-	}
-	return (0);
-}
+#endif
