@@ -6,12 +6,15 @@
 /*   By: nmisfit <nmisfit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 20:04:21 by nmisfit           #+#    #+#             */
-/*   Updated: 2021/08/04 21:37:31 by nmisfit          ###   ########.fr       */
+/*   Updated: 2021/08/08 13:56:24 by nmisfit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Account.hpp"
-#include "iostream"
+#include <iostream>
+#include <chrono>
+#include <ctime>
+#include <iomanip>
 
 int	Account::_nbAccounts = 0;
 int	Account::_totalAmount = 0;
@@ -54,12 +57,20 @@ Account::~Account( void )
 
 void	Account::_displayTimestamp( void )
 {
-	std::cout << "[19920104_091532] ";
+	std::chrono::time_point<std::chrono::system_clock> now = std::chrono::system_clock::now();
+    std::time_t time = std::chrono::system_clock::to_time_t(now);
+	tm utm = *localtime(&time);
+	
+    std::cout << std::setfill('0') << "[" << utm.tm_year + 1900 
+		<< std::setw(2) << utm.tm_mon + 1 
+		<< std::setw(2) << utm.tm_mday << "_" 
+		<< std::setw(2) << utm.tm_hour 
+		<< std::setw(2) << utm.tm_min 
+		<< std::setw(2) << utm.tm_sec << "] ";
 }
 
 int	Account::getNbAccounts( void )
-{
-	
+{	
 	return (Account::_nbAccounts);
 }
 
