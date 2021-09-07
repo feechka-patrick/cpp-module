@@ -6,14 +6,13 @@
 #    By: nmisfit <nmisfit@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/13 17:18:01 by nmisfit           #+#    #+#              #
-#    Updated: 2021/09/07 17:35:51 by nmisfit          ###   ########.fr        #
+#    Updated: 2021/09/07 20:07:57 by nmisfit          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC = main.cpp\
 	Zombie.cpp\
-	newZombie.cpp\
-	randomChump.cpp
+	ZombieHorde.cpp\
 
 OBJ = $(SRC:.cpp=.o)
 

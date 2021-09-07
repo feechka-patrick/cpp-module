@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmisfit <nmisfit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/08 14:13:12 by nmisfit           #+#    #+#             */
-/*   Updated: 2021/09/07 17:35:05 by nmisfit          ###   ########.fr       */
+/*   Created: 2021/09/07 20:29:18 by nmisfit           #+#    #+#             */
+/*   Updated: 2021/09/07 20:41:18 by nmisfit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
-
 #include "iostream"
 
-class Zombie
+int main()
 {
-	private:
-		std::string name;
-	public:
-		Zombie(void);
-		Zombie(std::string name);
-		~Zombie(void);
-		
-		void announce(void);
-};
+	std::string str = "HI THIS IS BRAIN";
+	std::string *stringPTR = &str;
+	std::string &stringREF = str;
 
-Zombie *newZombie(std::string name);
-void randomChump(std::string name);
-
-#endif
+	std::cout << "&string: " << &str << std::endl;
+	std::cout << "stringPTR: " << stringPTR << std::endl;
+	std::cout << "stringREF: " << &stringREF << std::endl << std::endl;
+	std::cout << "string using stringPTR: " << *stringPTR << std::endl;
+	std::cout << "string using stringREF: " << stringREF << std::endl;
+}
