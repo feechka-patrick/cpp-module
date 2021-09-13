@@ -6,7 +6,7 @@
 #    By: nmisfit <nmisfit@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/13 17:18:01 by nmisfit           #+#    #+#              #
-#    Updated: 2021/08/04 21:20:19 by nmisfit          ###   ########.fr        #
+#    Updated: 2021/09/13 13:48:29 by nmisfit          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,17 +16,17 @@ OBJ = $(SRC:.cpp=.o)
 
 NAME = test
 
-CC = clang++
+CXX = clang++
 
 CFLAG = -Wall -Wextra -Werror
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAG) $(OBJ) -o $(NAME)
+	$(CXX) $(CFLAG) $(OBJ) -o $(NAME)
 
 %.o: %.c 
-	$(CC) $(CFLAG) -c $< -o $@ 
+	$(CXX) $(CFLAG) -c $< -o $@ 
 
 clean:
 	rm -rf $(OBJ)
