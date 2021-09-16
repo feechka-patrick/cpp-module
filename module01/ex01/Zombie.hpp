@@ -6,7 +6,7 @@
 /*   By: nmisfit <nmisfit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/08 14:13:12 by nmisfit           #+#    #+#             */
-/*   Updated: 2021/09/07 20:15:26 by nmisfit          ###   ########.fr       */
+/*   Updated: 2021/09/15 19:08:12 by nmisfit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ class Zombie
 		void announce(void);
 };
 
-Zombie* zombieHorde(int N, std::string name);
+Zombie *zombieHorde(int N, std::string name);
 
 #endif

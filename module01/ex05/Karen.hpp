@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Karen.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmisfit <nmisfit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/08 14:12:05 by nmisfit           #+#    #+#             */
-/*   Updated: 2021/09/15 19:11:11 by nmisfit          ###   ########.fr       */
+/*   Created: 2021/09/16 12:02:25 by nmisfit           #+#    #+#             */
+/*   Updated: 2021/09/16 12:04:59 by nmisfit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef KAREN_HPP
+# define KAREN_HPP
 
-void Zombie::announce(void)
+# include <iostream>
+
+class Karen
 {
-	std::cout << this->name << " BraiiiiiiinnnzzzZ...\n";
-}
+	private:
+		void debug( void );
+		void info( void );
+		void warning( void );
+		void error( void );
+	public:
+		void complain( std::string level );
+};
 
-Zombie::Zombie(void){ }
-
-Zombie::Zombie(std::string name)
-{
-	this->name = name;
-}
-
-void Zombie::setName(std::string name)
-{
-	this->name = name;
-}
-
-Zombie::~Zombie()
-{
-	std::cout << this->name << " died\n";
-}
+#endif

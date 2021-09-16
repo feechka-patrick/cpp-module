@@ -6,18 +6,16 @@
 #    By: nmisfit <nmisfit@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/13 17:18:01 by nmisfit           #+#    #+#              #
-#    Updated: 2021/09/15 19:04:51 by nmisfit          ###   ########.fr        #
+#    Updated: 2021/09/16 15:15:12 by nmisfit          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC = main.cpp\
-	Zombie.cpp\
-	newZombie.cpp\
-	randomChump.cpp
+	Karen.cpp\
 
 OBJ = $(SRC:.cpp=.o)
 
-NAME = zombie
+NAME = ex05
 
 CXX = clang++
 

@@ -5,22 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmisfit <nmisfit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/07 20:29:18 by nmisfit           #+#    #+#             */
-/*   Updated: 2021/09/13 13:16:07 by nmisfit          ###   ########.fr       */
+/*   Created: 2021/09/16 11:59:49 by nmisfit           #+#    #+#             */
+/*   Updated: 2021/09/16 13:08:35 by nmisfit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "iostream"
-
-int main()
+# include "Karen.hpp"
+int main(int argc, char *argv[])
 {
-	std::string str = "HI THIS IS BRAIN";
-	std::string *stringPTR = &str;
-	std::string& stringREF = str;
-
-	std::cout << "&string: " << &str << std::endl;
-	std::cout << "stringPTR: " << stringPTR << std::endl;
-	std::cout << "stringREF: " << &stringREF << std::endl << std::endl;
-	std::cout << "string using stringPTR: " << *stringPTR << std::endl;
-	std::cout << "string using stringREF: " << stringREF << std::endl;
+	if (argc >= 2)
+	{
+		Karen karen;
+		int i = 0;
+		while (argv[++i])
+		{
+			karen.complain(argv[i]);
+		}
+	}
 }
