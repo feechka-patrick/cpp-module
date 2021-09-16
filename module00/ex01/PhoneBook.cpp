@@ -6,7 +6,7 @@
 /*   By: nmisfit <nmisfit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 19:35:25 by nmisfit           #+#    #+#             */
-/*   Updated: 2021/08/04 19:56:13 by nmisfit          ###   ########.fr       */
+/*   Updated: 2021/09/13 18:50:24 by nmisfit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,12 @@ void	PhoneBook::search(void)
 				<< "|" << std::endl;
 	for(int i = 0; i < MAX_SIZE; i++)
 	{
-		if (contacts[i].status == NOT_EMPTY)
+		if (contacts[i].getStatus() == NOT_EMPTY)
 		{
 			std::cout << std::setw(10) << std::right << i + 1
-					<< "|" << std::setw(10) << to_format(contacts[i].firstname)
-					<< "|" << std::setw(10) << to_format(contacts[i].lastname)
-					<< "|" << std::setw(10) << to_format(contacts[i].nickname)
+					<< "|" << std::setw(10) << to_format(contacts[i].getFirstName())
+					<< "|" << std::setw(10) << to_format(contacts[i].getLastName())
+					<< "|" << std::setw(10) << to_format(contacts[i].getNickname())
 					<< "|" << std::endl;
 		}
 	}

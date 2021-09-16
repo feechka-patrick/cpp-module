@@ -6,7 +6,7 @@
 /*   By: nmisfit <nmisfit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 12:02:10 by nmisfit           #+#    #+#             */
-/*   Updated: 2021/09/16 16:56:31 by nmisfit          ###   ########.fr       */
+/*   Updated: 2021/09/16 17:00:01 by nmisfit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,4 @@ void Karen::complain(std::string level)
 	int i = -1;
 	while (levels[++i] != level);
 	(this->*arr[i])();
-
 }

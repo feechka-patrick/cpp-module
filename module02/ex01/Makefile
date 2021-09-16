@@ -6,19 +6,20 @@
 #    By: nmisfit <nmisfit@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/13 17:18:01 by nmisfit           #+#    #+#              #
-#    Updated: 2021/09/13 13:48:17 by nmisfit          ###   ########.fr        #
+#    Updated: 2021/09/16 18:43:05 by nmisfit          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp Contact.cpp PhoneBook.cpp
+SRC = main.cpp\
+	Fixed.cpp\
 
 OBJ = $(SRC:.cpp=.o)
 
-NAME = phonebook
+NAME = ex00
 
 CXX = clang++
 
-CFLAG = -Wall -Wextra -Werror
+CFLAG = -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 

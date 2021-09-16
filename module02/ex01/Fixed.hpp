@@ -1,42 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmisfit <nmisfit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/04 19:27:15 by nmisfit           #+#    #+#             */
-/*   Updated: 2021/09/13 18:48:44 by nmisfit          ###   ########.fr       */
+/*   Created: 2021/09/16 17:22:41 by nmisfit           #+#    #+#             */
+/*   Updated: 2021/09/16 19:16:26 by nmisfit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_HPP
-# define CONTACT_HPP
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
 # include <iostream>
 
-# define EMPTY 0
-# define NOT_EMPTY 1
-
-class Contact
+class Fixed
 {
 	private:
-		std::string firstname;
-		std::string lastname;
-		std::string nickname;
-		std::string phone_number;
-		std::string darkest_secret;
-		int			status;
-
+		int fixed_point;
+		static const int lit = 8;
 	public:
-		int getStatus();
-		std::string getFirstName();
-		std::string getLastName();
-		std::string getNickname();
+		Fixed();
+		Fixed(int fp);
+		Fixed(float fp);
+		Fixed(const Fixed& fixed);
 		
-		Contact(void);
-		~Contact();
-		void fill_contact(void);
+		Fixed& operator= (const Fixed& fixed);
+		int operator<< (const Fixed& fixed);
+
+		int getRawBits( void ) const;
+		void setRawBits( int const raw );
+		
+		~Fixed();
 };
 
 #endif

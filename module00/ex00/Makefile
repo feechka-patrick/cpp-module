@@ -6,7 +6,7 @@
 #    By: nmisfit <nmisfit@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/13 17:18:01 by nmisfit           #+#    #+#              #
-#    Updated: 2021/08/03 16:12:58 by nmisfit          ###   ########.fr        #
+#    Updated: 2021/09/13 13:47:59 by nmisfit          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,17 +16,17 @@ OBJ = $(SRC:.cpp=.o)
 
 NAME = megaphone
 
-CC = clang++
+CXX = clang++
 
 CFLAG = -Wall -Wextra -Werror
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAG) $(OBJ) -o $(NAME)
+	$(CXX) $(CFLAG) $(OBJ) -o $(NAME)
 
 %.o: %.c 
-	$(CC) $(CFLAG) -c $< -o $@ 
+	$(CXX) $(CFLAG) -c $< -o $@ 
 
 clean:
 	rm -rf $(OBJ)
