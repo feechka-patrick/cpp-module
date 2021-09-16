@@ -6,7 +6,7 @@
 /*   By: nmisfit <nmisfit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 12:02:10 by nmisfit           #+#    #+#             */
-/*   Updated: 2021/09/16 13:10:35 by nmisfit          ###   ########.fr       */
+/*   Updated: 2021/09/16 16:56:31 by nmisfit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,33 +30,19 @@ void Karen::warning( void )
 			<< " extra bacon for free. I’ve been "
 			<< "coming here for years and you just started working here last month.\n";
 }
+
 void Karen::error( void )
 {
 	std::cout << "[ERROR] This is unacceptable, I want to speak to the manager now.\n";
 }
+
 void Karen::complain(std::string level)
 {
 	std::string levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-	//void (*arr[])() = {(void*)debug };
+	void (Karen::* arr[])() = { &Karen::debug, &Karen::info, &Karen::warning, &Karen::error };
 	
 	int i = -1;
-	while (levels[++i] != level) {};
-	switch (i)
-	{
-		case 0:
-			debug();
-			break;
-		case 1:
-			info();
-			break;
-		case 2:
-			warning();
-			break;
-		case 3:
-			error();
-			break;
-		default:
-			std::cout << "Level is wrong\n";
-			break;
-	}
+	while (levels[++i] != level);
+	(this->*arr[i])();
+
 }
