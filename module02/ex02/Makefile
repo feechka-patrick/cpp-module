@@ -6,7 +6,7 @@
 #    By: nmisfit <nmisfit@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/13 17:18:01 by nmisfit           #+#    #+#              #
-#    Updated: 2021/09/17 21:01:30 by nmisfit          ###   ########.fr        #
+#    Updated: 2021/09/17 21:01:25 by nmisfit          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ SRC = main.cpp\
 
 OBJ = $(SRC:.cpp=.o)
 
-NAME = ex01
+NAME = ex02
 
 CXX = clang++
 

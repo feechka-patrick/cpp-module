@@ -6,7 +6,7 @@
 /*   By: nmisfit <nmisfit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 17:22:41 by nmisfit           #+#    #+#             */
-/*   Updated: 2021/09/17 21:17:59 by nmisfit          ###   ########.fr       */
+/*   Updated: 2021/09/17 20:57:00 by nmisfit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,28 @@ class Fixed
 		
 		Fixed& operator= (const Fixed& fixed);
 
+		bool operator< (const Fixed& rhs);
+		bool operator> (const Fixed& rhs);
+		bool operator<=(const Fixed& rhs);
+		bool operator>=(const Fixed& rhs);
+		bool operator==(const Fixed& rhs);
+		bool operator!=(const Fixed& rhs);
+
+		float operator+(const Fixed& obj);
+		float operator-(const Fixed& obj);
+		float operator*(const Fixed& obj);
+		float operator/(const Fixed& obj);
+		
+		Fixed& operator++();
+		Fixed operator++(int);
+		Fixed& operator--();
+		Fixed operator--(int);
+		
+		static Fixed& min(Fixed& obj1, Fixed& obj2);
+		static const Fixed& min(const Fixed& obj1, const Fixed& obj2);
+		static Fixed& max(Fixed& obj1, Fixed& obj2);
+		static const Fixed& max(const Fixed& obj1, const Fixed& obj2);
+		
 		int getRawBits( void ) const;
 		void setRawBits( int const raw );
 		

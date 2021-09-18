@@ -6,16 +6,18 @@
 #    By: nmisfit <nmisfit@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/13 17:18:01 by nmisfit           #+#    #+#              #
-#    Updated: 2021/09/17 21:01:30 by nmisfit          ###   ########.fr        #
+#    Updated: 2021/09/18 14:58:57 by nmisfit          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC = main.cpp\
 	Fixed.cpp\
+	Point.cpp\
+	bsp.cpp\
 
 OBJ = $(SRC:.cpp=.o)
 
-NAME = ex01
+NAME = bsp
 
 CXX = clang++
 
