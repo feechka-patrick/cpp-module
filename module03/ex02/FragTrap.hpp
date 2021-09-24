@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmisfit <nmisfit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/18 17:48:48 by nmisfit           #+#    #+#             */
-/*   Updated: 2021/09/24 16:23:39 by nmisfit          ###   ########.fr       */
+/*   Created: 2021/09/24 16:34:34 by nmisfit           #+#    #+#             */
+/*   Updated: 2021/09/24 16:35:14 by nmisfit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
 # include "ClapTrap.hpp"
 
-class ScavTrap : ClapTrap
+class FragTrap : ClapTrap
 {
 	public:
-		ScavTrap();
-		ScavTrap(std::string _name);
+		FragTrap();
+		FragTrap(std::string _name);
 
-		void guardGate();
 		void getInfo();
 		
-		~ScavTrap();
+		~FragTrap();
 };
 
 #endif

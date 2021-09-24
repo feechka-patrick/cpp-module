@@ -1,45 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmisfit <nmisfit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/18 17:48:50 by nmisfit           #+#    #+#             */
-/*   Updated: 2021/09/24 16:30:20 by nmisfit          ###   ########.fr       */
+/*   Created: 2021/09/24 16:36:11 by nmisfit           #+#    #+#             */
+/*   Updated: 2021/09/24 16:38:45 by nmisfit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "ScavTrap.hpp"
+# include "FragTrap.hpp"
 
-ScavTrap::ScavTrap()
+FragTrap::FragTrap()
 {
-	std::cout << "ScavTrap " << this->ClapTrap::getName() << " created\n";
+	std::cout << "FragTrap " << this->ClapTrap::getName() << " created\n";
 }
 
-ScavTrap::ScavTrap(std::string _name) : ClapTrap(_name)
+FragTrap::FragTrap(std::string _name) : ClapTrap(_name)
 {
-	std::cout << "ScavTrap " << this->ClapTrap::getName() << " created\n";
+	std::cout << "FragTrap " << this->ClapTrap::getName() << " created\n";
 	this->ClapTrap::setHitpoints(100);
-	this->ClapTrap::setEnergyPoints(50);
-	this->ClapTrap::setAttackDamage(20);
+	this->ClapTrap::setEnergyPoints(100);
+	this->ClapTrap::setAttackDamage(30);
 }
 
-void ScavTrap::guardGate()
-{
-	std::cout << "ScavTrap " << this->ClapTrap::getName() << " have enterred"
-		<< " in Gate keeper mode\n";
-}
 
-void ScavTrap::getInfo()
+void FragTrap::getInfo()
 {
-	std::cout << "SCAVTRAP " << this->ClapTrap::getName() << " INFO\n"
+	std::cout << "FRAGTRAP " << this->ClapTrap::getName() << " INFO\n"
 		<< "HITPOINTS ......... " << this->ClapTrap::getHitpoints() << "\n"
 		<< "ENERGY POINTS ..... " << this->ClapTrap::getEnergyPoints()<< "\n"
 		<< "ATTACK DAMAGE ..... " << this->ClapTrap::getAttackDamage() << "\n";
 }
 
-ScavTrap::~ScavTrap()
+FragTrap::~FragTrap()
 {
-	std::cout << "ScavTrap " << this->ClapTrap::getName() << " killed\n";
+	std::cout << "FragTrap " << this->ClapTrap::getName() << " killed\n";
 }

@@ -6,12 +6,15 @@
 /*   By: nmisfit <nmisfit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 15:43:29 by nmisfit           #+#    #+#             */
-/*   Updated: 2021/09/18 17:38:28 by nmisfit          ###   ########.fr       */
+/*   Updated: 2021/09/24 15:28:03 by nmisfit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap(): name("default"), hitpoints(10),
+		energy_points(10), attack_damage(0) {}
+		
 ClapTrap::ClapTrap(std::string _name): name(_name), hitpoints(10),
 		energy_points(10), attack_damage(0) {}
 
@@ -45,3 +48,4 @@ void ClapTrap::beRepaired(unsigned int amount)
 		<< amount << " points\n";
 }
 
+ClapTrap::~ClapTrap() {}
