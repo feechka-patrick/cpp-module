@@ -6,21 +6,23 @@
 #    By: nmisfit <nmisfit@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/13 17:18:01 by nmisfit           #+#    #+#              #
-#    Updated: 2021/10/15 16:14:26 by nmisfit          ###   ########.fr        #
+#    Updated: 2021/10/15 17:04:46 by nmisfit          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC = main.cpp\
 	FragTrap.cpp\
 	ClapTrap.cpp\
+	ScavTrap.cpp\
+	DiamondTrap.cpp\
 
 OBJ = $(SRC:.cpp=.o)
 
-NAME = ex02
+NAME = ex03
 
 CXX = clang++
 
-CFLAG = -Wall -Wextra -Werror -std=c++98
+CFLAG = -Wall -Wextra -Werror -Wshadow -Wno-shadow -std=c++98
 
 all: $(NAME)
 

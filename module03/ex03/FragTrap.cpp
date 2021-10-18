@@ -6,7 +6,7 @@
 /*   By: nmisfit <nmisfit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 16:36:11 by nmisfit           #+#    #+#             */
-/*   Updated: 2021/10/15 16:11:48 by nmisfit          ###   ########.fr       */
+/*   Updated: 2021/10/18 18:50:02 by nmisfit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 FragTrap::FragTrap()
 {
 	std::cout << "FragTrap " << this->getName() << " created\n";
+	this->ClapTrap::setHitpoints(100);
+	this->ClapTrap::setEnergyPoints(100);
+	this->ClapTrap::setAttackDamage(30);
 }
 
 FragTrap::FragTrap(std::string _name) : ClapTrap(_name)

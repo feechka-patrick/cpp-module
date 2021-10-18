@@ -6,7 +6,7 @@
 /*   By: nmisfit <nmisfit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 15:43:29 by nmisfit           #+#    #+#             */
-/*   Updated: 2021/09/24 15:28:03 by nmisfit          ###   ########.fr       */
+/*   Updated: 2021/10/15 15:49:41 by nmisfit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,14 @@ void ClapTrap::beRepaired(unsigned int amount)
 {
 	std::cout << "ClapTrap " << this->name <<" repaired on " 
 		<< amount << " points\n";
+}
+
+void ClapTrap::getInfo()
+{
+	std::cout << "SCAVTRAP " << this->name << " INFO\n"
+		<< "HITPOINTS ......... " << this->hitpoints << "\n"
+		<< "ENERGY POINTS ..... " << this->energy_points << "\n"
+		<< "ATTACK DAMAGE ..... " << this->attack_damage << "\n";
 }
 
 ClapTrap::~ClapTrap() {}

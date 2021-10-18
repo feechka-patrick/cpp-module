@@ -6,20 +6,20 @@
 /*   By: nmisfit <nmisfit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 17:39:58 by nmisfit           #+#    #+#             */
-/*   Updated: 2021/09/24 16:31:12 by nmisfit          ###   ########.fr       */
+/*   Updated: 2021/10/15 16:14:16 by nmisfit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "ScavTrap.hpp"
+# include "FragTrap.hpp"
 
 int main()
 {
-	ScavTrap trapp("badboy");
+	FragTrap frag("FRAGNAME");
 	std::cout << std::endl;
 	
-	trapp.getInfo();
+	frag.getInfo();
 	std::cout << std::endl;
 	
-	trapp.guardGate();
+	frag.highFivesGuys();
 	std::cout << std::endl;
 }

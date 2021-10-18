@@ -6,7 +6,7 @@
 /*   By: nmisfit <nmisfit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 17:48:50 by nmisfit           #+#    #+#             */
-/*   Updated: 2021/09/24 16:30:20 by nmisfit          ###   ########.fr       */
+/*   Updated: 2021/10/18 19:19:13 by nmisfit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,38 @@
 
 ScavTrap::ScavTrap()
 {
-	std::cout << "ScavTrap " << this->ClapTrap::getName() << " created\n";
+	std::cout << "ScavTrap " << this->getName() << " created\n";
 }
 
 ScavTrap::ScavTrap(std::string _name) : ClapTrap(_name)
 {
-	std::cout << "ScavTrap " << this->ClapTrap::getName() << " created\n";
-	this->ClapTrap::setHitpoints(100);
-	this->ClapTrap::setEnergyPoints(50);
-	this->ClapTrap::setAttackDamage(20);
+	std::cout << "ScavTrap " << this->getName() << " created\n";
+	this->setHitpoints(100);
+	this->setEnergyPoints(50);
+	this->setAttackDamage(20);
 }
 
 void ScavTrap::guardGate()
 {
-	std::cout << "ScavTrap " << this->ClapTrap::getName() << " have enterred"
+	std::cout << "ScavTrap " << this->getName() << " have enterred"
 		<< " in Gate keeper mode\n";
+}
+
+void ScavTrap::attack(std::string const & target)
+{
+	std::cout << "ScavTrap "<< this->getName()  <<" attack "
+		<< target << ", causing "<< this->getAttackDamage() <<" points of damage!\n";
 }
 
 void ScavTrap::getInfo()
 {
-	std::cout << "SCAVTRAP " << this->ClapTrap::getName() << " INFO\n"
-		<< "HITPOINTS ......... " << this->ClapTrap::getHitpoints() << "\n"
-		<< "ENERGY POINTS ..... " << this->ClapTrap::getEnergyPoints()<< "\n"
-		<< "ATTACK DAMAGE ..... " << this->ClapTrap::getAttackDamage() << "\n";
+	std::cout << "SCAVTRAP " << this->getName() << " INFO\n"
+		<< "HITPOINTS ......... " << this->getHitpoints() << "\n"
+		<< "ENERGY POINTS ..... " << this->getEnergyPoints()<< "\n"
+		<< "ATTACK DAMAGE ..... " << this->getAttackDamage() << "\n";
 }
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "ScavTrap " << this->ClapTrap::getName() << " killed\n";
+	std::cout << "ScavTrap " << this->getName() << " killed\n";
 }

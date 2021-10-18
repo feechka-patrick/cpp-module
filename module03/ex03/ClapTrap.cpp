@@ -6,7 +6,7 @@
 /*   By: nmisfit <nmisfit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 15:43:29 by nmisfit           #+#    #+#             */
-/*   Updated: 2021/10/18 19:17:50 by nmisfit          ###   ########.fr       */
+/*   Updated: 2021/09/24 16:20:37 by nmisfit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ void ClapTrap::attack(std::string const & target)
 	std::cout << "ClapTrap "<< this->name <<" attack "
 		<< target << ", causing "<< this->attack_damage <<" points of damage!\n";
 }
-
 void ClapTrap::takeDamage(unsigned int amount)
 {
 	std::cout << "ClapTrap " << this->name <<" take damage on " 
