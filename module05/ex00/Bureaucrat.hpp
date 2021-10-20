@@ -37,11 +37,7 @@ class Bureaucrat
 		~Bureaucrat();
 };
 
-std::ostream& operator<<(std::ostream& os, const Bureaucrat& obj)
-{
-	os << obj.getName() << ", bureaucrat grade " << obj.getGrade();
-	return os;
-}
+std::ostream& operator<<(std::ostream& os, const Bureaucrat& obj);
 
 #endif
 

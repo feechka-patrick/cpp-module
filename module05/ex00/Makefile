@@ -4,7 +4,7 @@ SRC = main.cpp\
 
 OBJ = $(SRC:.cpp=.o)
 
-NAME = ex01
+NAME = ex00
 
 CXX = clang++
 
