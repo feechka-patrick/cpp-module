@@ -2,7 +2,17 @@
 
 Ice::Ice() : AMateria("ice")
 {
-	std::cout << "Ice is created\n";
+	//std::cout << "Ice is created\n";
+}
+
+Ice::Ice(const Ice &obj)
+{
+	//std::cout << "Ice is created\n";
+}
+
+Ice& Ice::operator= (const Ice& obj)
+{
+	return (*this);
 }
 
 AMateria *Ice::clone() const
@@ -18,5 +28,5 @@ void Ice::use(ICharacter &target)
 
 Ice::~Ice()
 {
-	std::cout << "Ice is killed\n";
+	//std::cout << "Ice is killed\n";
 } 

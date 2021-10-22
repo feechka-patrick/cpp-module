@@ -6,7 +6,7 @@
 #    By: nmisfit <nmisfit@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/13 17:18:01 by nmisfit           #+#    #+#              #
-#    Updated: 2021/10/18 21:29:02 by nmisfit          ###   ########.fr        #
+#    Updated: 2021/10/22 16:55:03 by nmisfit          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,9 @@ SRC = main.cpp\
 	Animal.cpp\
 	Cat.cpp\
 	Dog.cpp\
+	WrongAnimal.cpp\
+	WrongCat.cpp\
+	WrongDog.cpp\
 
 OBJ = $(SRC:.cpp=.o)
 

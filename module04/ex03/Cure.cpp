@@ -2,18 +2,18 @@
 
 Cure::Cure() : AMateria("cure")
 {
-	std::cout << "Cure is created\n";
+	//std::cout << "Cure is created\n";
 }
 
-// Cure::Cure(const Cure &obj)
-// {
-// 	std::cout << "Cure is created\n";
-// }
+Cure::Cure(const Cure &obj)
+{
+	//std::cout << "Cure is created\n";
+}
 
-// Cure& Cure::operator= (const Cure& obj)
-// {
-// 	return (*this);
-// }
+Cure& Cure::operator= (const Cure& obj)
+{
+	return (*this);
+}
 
 AMateria *Cure::clone() const
 {
@@ -28,5 +28,5 @@ void Cure::use(ICharacter &target)
 
 Cure::~Cure()
 {
-	std::cout << "Cure is killed\n";
+	//std::cout << "Cure is killed\n";
 } 

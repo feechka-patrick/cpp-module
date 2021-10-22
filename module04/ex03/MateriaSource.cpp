@@ -2,8 +2,10 @@
 
 MateriaSource::MateriaSource()
 {
-	std::cout << "MateriaSource is created\n";
+	//std::cout << "MateriaSource is created\n";
 	this->indexMateria = 0;
+	for (size_t i = 0; i < 4; i++)
+		learnedMaterias[i] = NULL;
 }
 
 
@@ -37,5 +39,5 @@ MateriaSource::~MateriaSource()
 			delete learnedMaterias[i];
 	}
 	
-	std::cout << "MateriaSource is killed\n";
+	//std::cout << "MateriaSource is killed\n";
 } 

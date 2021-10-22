@@ -9,8 +9,10 @@ class AMateria
 {
 	private:
 		std::string type;
+	protected:
+		AMateria();
 	public:
-		AMateria(std::string const &type);		
+		AMateria(std::string const &type);
 		AMateria(const AMateria &obj);
 		AMateria& operator= (const AMateria& obj);
 
