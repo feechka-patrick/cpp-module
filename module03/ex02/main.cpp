@@ -6,7 +6,7 @@
 /*   By: nmisfit <nmisfit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 17:39:58 by nmisfit           #+#    #+#             */
-/*   Updated: 2021/10/15 16:14:16 by nmisfit          ###   ########.fr       */
+/*   Updated: 2021/10/22 16:07:17 by nmisfit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@ int main()
 	std::cout << std::endl;
 	
 	frag.getInfo();
+	std::cout << std::endl;
+	
+	frag.attack("BORIS");
 	std::cout << std::endl;
 	
 	frag.highFivesGuys();

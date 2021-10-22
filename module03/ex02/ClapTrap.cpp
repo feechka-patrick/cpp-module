@@ -6,7 +6,7 @@
 /*   By: nmisfit <nmisfit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 15:43:29 by nmisfit           #+#    #+#             */
-/*   Updated: 2021/09/24 16:20:37 by nmisfit          ###   ########.fr       */
+/*   Updated: 2021/10/22 16:02:29 by nmisfit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,19 @@
 ClapTrap::ClapTrap(): name("default"), hitpoints(10),
 		energy_points(10), attack_damage(0)
 {
-	std::cout << "ClapTrap " << this->getName() << " created\n";
+	std::cout << "ClapTrap " << this->name << " created\n";
 }
 		
 ClapTrap::ClapTrap(std::string _name): name(_name), hitpoints(10),
 		energy_points(10), attack_damage(0)
 {
-	std::cout << "ClapTrap " << this->getName() << " created\n";
+	std::cout << "ClapTrap " << this->name << " created\n";
 }
 
 ClapTrap::ClapTrap(const ClapTrap &obj) : name(obj.name), hitpoints(obj.hitpoints),
 		energy_points(obj.energy_points), attack_damage(obj.attack_damage)
 {
-	std::cout << "ClapTrap " << this->getName() << " created\n";
+	std::cout << "ClapTrap " << this->name << " created\n";
 }
 
 ClapTrap& ClapTrap::operator= (const ClapTrap& obj)
@@ -40,23 +40,12 @@ ClapTrap& ClapTrap::operator= (const ClapTrap& obj)
 	return (*this);
 }
 
-std::string ClapTrap::getName() { return (this->name); }
-void ClapTrap::setName(const std::string &_name) { this->name = _name; }
-
-int ClapTrap::getHitpoints() { return (this->hitpoints); }
-void ClapTrap::setHitpoints(const int &_hitpoints) { this->hitpoints = _hitpoints; }
-
-int ClapTrap::getEnergyPoints() { return (this->energy_points); }
-void ClapTrap::setEnergyPoints(const int &_energy_points) { this->energy_points = _energy_points; }
-
-int ClapTrap::getAttackDamage() { return (this->attack_damage); }
-void ClapTrap::setAttackDamage(const int &_attack_damage) { this->attack_damage = _attack_damage; }
-
 void ClapTrap::attack(std::string const & target)
 {
 	std::cout << "ClapTrap "<< this->name <<" attack "
 		<< target << ", causing "<< this->attack_damage <<" points of damage!\n";
 }
+
 void ClapTrap::takeDamage(unsigned int amount)
 {
 	std::cout << "ClapTrap " << this->name <<" take damage on " 
@@ -71,5 +60,5 @@ void ClapTrap::beRepaired(unsigned int amount)
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "ClapTrap " << this->getName() << " killed\n";
+	std::cout << "ClapTrap " << this->name << " killed\n";
 }

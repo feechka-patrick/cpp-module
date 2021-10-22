@@ -6,7 +6,7 @@
 /*   By: nmisfit <nmisfit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 16:34:34 by nmisfit           #+#    #+#             */
-/*   Updated: 2021/10/18 18:10:30 by nmisfit          ###   ########.fr       */
+/*   Updated: 2021/10/22 16:23:56 by nmisfit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "ClapTrap.hpp"
 
-class FragTrap : public virtual ClapTrap
+class FragTrap : virtual public ClapTrap
 {
 	public:
 		FragTrap();
@@ -23,6 +23,7 @@ class FragTrap : public virtual ClapTrap
 
 		void getInfo();
 		void highFivesGuys(void);
+		void attack(std::string const & target);
 		
 		~FragTrap();
 };

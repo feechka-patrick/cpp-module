@@ -6,7 +6,7 @@
 /*   By: nmisfit <nmisfit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 16:36:11 by nmisfit           #+#    #+#             */
-/*   Updated: 2021/10/18 18:50:02 by nmisfit          ###   ########.fr       */
+/*   Updated: 2021/10/22 16:26:19 by nmisfit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,32 @@
 
 FragTrap::FragTrap()
 {
-	std::cout << "FragTrap " << this->getName() << " created\n";
-	this->ClapTrap::setHitpoints(100);
-	this->ClapTrap::setEnergyPoints(100);
-	this->ClapTrap::setAttackDamage(30);
+	std::cout << "FragTrap " << this->name << " created\n";
+	this->hitpoints = 100;
+	this->energy_points = 100;
+	this->attack_damage = 30;
 }
 
 FragTrap::FragTrap(std::string _name) : ClapTrap(_name)
 {
-	std::cout << "FragTrap " << this->getName() << " created\n";
-	this->ClapTrap::setHitpoints(100);
-	this->ClapTrap::setEnergyPoints(100);
-	this->ClapTrap::setAttackDamage(30);
+	std::cout << "FragTrap " << this->name << " created\n";
+	this->hitpoints = 100;
+	this->energy_points = 100;
+	this->attack_damage = 30;
 }
-
 
 void FragTrap::getInfo()
 {
-	std::cout << "FRAGTRAP " << this->getName() << " INFO\n"
-		<< "HITPOINTS ......... " << this->getHitpoints() << "\n"
-		<< "ENERGY POINTS ..... " << this->getEnergyPoints()<< "\n"
-		<< "ATTACK DAMAGE ..... " << this->getAttackDamage() << "\n";
+	std::cout << "FRAGTRAP " << this->name << " INFO\n"
+		<< "HITPOINTS ......... " << this->hitpoints << "\n"
+		<< "ENERGY POINTS ..... " << this->energy_points<< "\n"
+		<< "ATTACK DAMAGE ..... " << this->attack_damage << "\n";
+}
+
+void FragTrap::attack(std::string const & target)
+{
+	std::cout << "FragTrap "<< this->name   << " attack "
+		<< target << ", causing "<< this->attack_damage <<" points of damage!\n";
 }
 
 void FragTrap::highFivesGuys(void)
@@ -44,5 +49,5 @@ void FragTrap::highFivesGuys(void)
 
 FragTrap::~FragTrap()
 {
-	std::cout << "FragTrap " << this->ClapTrap::getName() << " killed\n";
+	std::cout << "FragTrap " << this->name << " killed\n";
 }

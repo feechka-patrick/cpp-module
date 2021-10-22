@@ -6,7 +6,7 @@
 /*   By: nmisfit <nmisfit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 17:48:48 by nmisfit           #+#    #+#             */
-/*   Updated: 2021/10/18 19:20:52 by nmisfit          ###   ########.fr       */
+/*   Updated: 2021/10/22 16:24:01 by nmisfit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "ClapTrap.hpp"
 
-class ScavTrap : public virtual ClapTrap
+class ScavTrap : virtual public ClapTrap
 {
 	public:
 		ScavTrap();
@@ -23,7 +23,7 @@ class ScavTrap : public virtual ClapTrap
 
 		void guardGate();
 		void getInfo();
-		void attack(std::string const & target);
+		virtual void attack(std::string const & target);
 		
 		~ScavTrap();
 };
