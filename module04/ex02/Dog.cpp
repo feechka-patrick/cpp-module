@@ -19,7 +19,7 @@ Dog& Dog::operator= (const Dog& obj)
 	return (*this);
 }
 
-void Dog::makeSound()
+void Dog::makeSound() const
 {
 	std::cout << "** Aww.. **\n";
 }

@@ -13,13 +13,19 @@ Character::Character(std::string name)
 Character::Character(const Character &obj)
 {
 	this->name = obj.getName();
-
+	for (size_t i = 0; i < 4; i++)
+		inventory[i] = obj.inventory[i];
+	indexEmptySlots = obj.indexEmptySlots;
 	//std::cout << "Character is created\n";
 }
 
 Character& Character::operator= (const Character& obj)
 {
 	this->name = obj.getName();
+	for (size_t i = 0; i < 4; i++)
+		inventory[i] = obj.inventory[i];
+	indexEmptySlots = obj.indexEmptySlots;
+	
 	return (*this);
 }
 
@@ -45,7 +51,6 @@ void Character::unequip(int idx)
 		{
 			inventory[i] = inventory[i + 1];
 		}
-		
 	}
 }
 

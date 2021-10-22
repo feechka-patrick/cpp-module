@@ -16,6 +16,13 @@ int main()
 	}
 
 	std::cout << std::endl;
+
+	// Cat basic;
+	// {
+	// 	Cat tmp = basic;
+	// }
+
+	std::cout << std::endl;
 	for (size_t i = 0; i < N; i++)
 		delete animals[i];
 	
