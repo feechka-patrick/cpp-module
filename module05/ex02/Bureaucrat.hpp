@@ -32,10 +32,8 @@ class Bureaucrat
 				return ("Grade: too low exception!");
 			}
 		};
-
 		std::string getName() const;
 		int getGrade() const;
-		
 		~Bureaucrat();
 };
 

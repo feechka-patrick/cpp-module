@@ -9,7 +9,7 @@ void Form::check_grade(int &_grade) const
 }
 
 Form::Form(std::string _name, int _grade_signed, int _grade_execute)
-	: name(_name), gradeForSigning(_grade_signed), gradeToExecute(_grade_execute)
+	: name(_name), gradeSign(_grade_signed), gradeExec(_grade_execute)
 {
 	check_grade(_grade_signed);
 	check_grade(_grade_execute);
@@ -29,7 +29,7 @@ void Form::signForm(std::string brname, bool result)
 
 void Form::beSigned(Bureaucrat &br)
 {
-	if (br.getGrade() > this->gradeForSigning)
+	if (br.getGrade() > this->gradeSign)
 	{
 		signForm(br.getName(), false);
 		throw Form::GradeTooLowException();
@@ -41,8 +41,8 @@ void Form::beSigned(Bureaucrat &br)
 std::ostream& operator<<(std::ostream& os, const Form& obj)
 {
 	os << "FORM name: " << obj.getName() << std::endl
-		<< "GRADE FOR SIGNING ... " << obj.getGradeForSigning() << std::endl
-		<< "GRADE TO EXECUTE .... " << obj.getGradeToExecute() << std::endl
+		<< "GRADE FOR SIGNING ... " << obj.getgradeSign() << std::endl
+		<< "GRADE TO EXECUTE .... " << obj.getgradeExec() << std::endl
 		<< "STATUS ...... " << (obj.getStatus() ? "is signed" : "not signed")
 		<< std::endl;
 	return (os);
@@ -63,14 +63,14 @@ std::string Form::getName() const
 	return (this->name);
 }
 
-int Form::getGradeForSigning() const
+int Form::getgradeSign() const
 {
-	return (this->gradeForSigning);
+	return (this->gradeSign);
 }
 
-int Form::getGradeToExecute() const
+int Form::getgradeExec() const
 {
-	return (this->gradeToExecute);
+	return (this->gradeExec);
 }
 
 bool Form::getStatus() const
@@ -79,8 +79,7 @@ bool Form::getStatus() const
 }
 
 Form::Form(const Form &obj) 
-	: name(obj.name), gradeForSigning(obj.getGradeForSigning()), gradeToExecute(obj.getGradeToExecute()){}
+	: name(obj.name), gradeSign(obj.getgradeSign()), gradeExec(obj.getgradeExec()){}
 
 Form& Form::operator= (const Form& obj) { return (*this); }
-
 Form::~Form() { }

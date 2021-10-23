@@ -1,4 +1,6 @@
- #ifndef FORM_HPP
+
+
+#ifndef FORM_HPP
 # define FORM_HPP
 
 # include "iostream"
@@ -8,8 +10,8 @@ class Form
 {
 	private:
 		const std::string name;
-		const int gradeForSigning;
-		const int gradeToExecute;
+		const int gradeSign;
+		const int gradeExec;
 		bool isSigned;
 		
 		void check_grade(int &_grade) const;
@@ -17,12 +19,10 @@ class Form
 		Form(std::string _name, int _grade_signed, int _grade_execute);
 		Form(const Form &obj);
 		Form& operator= (const Form& obj);
-		
-		virtual void execute (Bureaucrat const & executor) const;
 
 		std::string getName() const;
-		int getGradeForSigning() const;
-		int getGradeToExecute() const;
+		int getgradeSign() const;
+		int getgradeExec() const;
 		bool getStatus() const;
 
 		class GradeTooHighException : public std::exception
