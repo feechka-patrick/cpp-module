@@ -13,12 +13,10 @@ RobotomyRequestForm& RobotomyRequestForm::operator= (const RobotomyRequestForm& 
 
 void RobotomyRequestForm::execute (Bureaucrat const & executor) const
 {
+	executor.executeForm(*this);
+
 	if (executor.getGrade() > this->getgradeExec())
-	{
-		std::cout << executor.getName() << " cannot sign " << this->getName() <<
-			" because his grade is low\n";
 		throw Form::GradeTooLowException();
-	}
 	else if (this->getStatus()) // action
 	{
 		std::cout << "** BRRR BRRR BRRR **\n";
@@ -29,9 +27,6 @@ void RobotomyRequestForm::execute (Bureaucrat const & executor) const
 		else
 			std::cout << this->getName() << " has been robotomized is NOT successfully\n";
 	}
-	else
-		std::cout << executor.getName() << " cannot sign " << this->getName() <<
-			" because form not be sign\n";
 }
 
 RobotomyRequestForm::~RobotomyRequestForm() {}

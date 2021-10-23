@@ -12,12 +12,20 @@ void Bureaucrat::setGrade(int &_grade)
 
 Bureaucrat::Bureaucrat(std::string _name) : name(_name) { }
 
-Bureaucrat::Bureaucrat(std::string _name, int _grade) : name(_name)
+Bureaucrat::Bureaucrat(std::string _name, int _grade) : name(_name), grade(_grade) {}
+
+void Bureaucrat::executeForm(Form const & form) const
 {
-	this->setGrade(_grade);
+	if (this->getGrade() > form.getgradeExec())
+		std::cout << this->getName() << " cannot execute form" <<
+			" because his grade is low\n";
+	else if (!form.getStatus())
+		std::cout << this->getName() << " cannot execute form" <<
+			" because form not be sign\n";
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &obj) { }
+Bureaucrat::Bureaucrat(const Bureaucrat &obj) 
+	: name(obj.getName()), grade(obj.getGrade()) {}
 
 void Bureaucrat::incrementGrade()
 {

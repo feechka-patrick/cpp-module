@@ -11,12 +11,10 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator= (const ShrubberyCreation
 
 void ShrubberyCreationForm::execute (Bureaucrat const & executor) const
 {
+	executor.executeForm(*this);
+
 	if (executor.getGrade() > this->getgradeExec())
-	{
-		std::cout << executor.getName() << " cannot execute " << this->getName() <<
-			" because his grade is low\n";
 		throw Form::GradeTooLowException();
-	}
 	else if (this->getStatus()) // action
 	{
 		std::ifstream ascii_tree("ascii_tree.txt");
@@ -28,11 +26,9 @@ void ShrubberyCreationForm::execute (Bureaucrat const & executor) const
 		newfile.close();
 		ascii_tree.close();
 
-		std::cout << executor.getName() << " execute " << this->getName() << "\n";
+		std::cout << executor.getName() << " execute " 
+			<< this->getName() << "\n";
 	}
-	else
-		std::cout << executor.getName() << " cannot execute " << this->getName() <<
-			" because form not be sign\n";
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {}

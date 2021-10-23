@@ -1,5 +1,3 @@
-
-
 #ifndef FORM_HPP
 # define FORM_HPP
 
@@ -19,6 +17,8 @@ class Form
 		Form(std::string _name, int _grade_signed, int _grade_execute);
 		Form(const Form &obj);
 		Form& operator= (const Form& obj);
+
+		virtual void execute (Bureaucrat const & executor) const = 0;
 
 		std::string getName() const;
 		int getgradeSign() const;
