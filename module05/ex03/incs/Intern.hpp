@@ -17,6 +17,14 @@ class Intern
 
 		Form *makeForm(std::string formName, std::string target);
 		~Intern();
+
+		class InvalidFormNameException : public std::exception
+		{
+			const char *what() const throw ()
+			{
+				return ("Invalid form name!");
+			}
+		};
 }; 
 
 #endif

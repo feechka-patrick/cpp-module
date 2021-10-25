@@ -1,21 +1,16 @@
 
-SRC = srcs/main.cpp\
-	srcs/Bureaucrat.cpp\
-	srcs/Form.cpp\
-	srcs/ShrubberyCreationForm.cpp\
-	srcs/RobotomyRequestForm.cpp\
-	srcs/PresidentialPardonForm.cpp\
-	srcs/Intern.cpp\
+SRC = main.cpp\
+	Converter.cpp\
 	
 OBJ = $(SRC:.cpp=.o)
 
-OBJDIR = objs
+OBJDIR = ./
 
 DEPS = $(OBJ:.o=.d)
 
 DEPFLAGS = -MMD -MF $(@:.o=.d)
 
-NAME = ex03
+NAME = convert
 
 CXX = clang++
 

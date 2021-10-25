@@ -7,18 +7,18 @@ Form *Intern::makeForm(std::string formName, std::string target)
 {
 	std::string formTypes[] = {"shrubbery creation", "robotomy request", "presidential pardon" };
 	Form *forms[] = { new ShrubberyCreationForm(target), new RobotomyRequestForm(target), 
-		new PresidentialPardonForm(target) };
-	Form *resultForm = nullptr;
-
-	for (int i = 0; i < 3; i++)
-	{
-		if (formTypes[i] != formName)
-			delete forms[i];
-		else resultForm = forms[i];
-	}
+		new PresidentialPardonForm(target) , 0};
 	
-	if (resultForm == nullptr)
-		std::cout << "error! bad form name!\n";
+	Form *resultForm = 0;
+	int i = 0;
+
+	for ( ; i < 3 && formTypes[i] != formName; i++) delete forms[i];
+
+	resultForm = forms[i++];
+	for ( ; i < 3; i++) delete forms[i];
+
+	if (resultForm == 0)
+		throw Intern::InvalidFormNameException();
 	return (resultForm);
 }
 

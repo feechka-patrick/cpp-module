@@ -40,12 +40,6 @@ void Form::beSigned(Bureaucrat &br)
 
 std::ostream& operator<<(std::ostream& os, const Form& obj)
 {
-	if (&obj == nullptr)
-	{
-		os << "FORM ERROR\n";
-		return (os);
-	}
-
 	os << "FORM name: " << obj.getName() << std::endl
 		<< "GRADE FOR SIGNING ... " << obj.getgradeSign() << std::endl
 		<< "GRADE TO EXECUTE .... " << obj.getgradeExec() << std::endl

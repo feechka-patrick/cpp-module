@@ -9,7 +9,15 @@ int main()
 {
 	Intern *intern = new Intern();
 
-	std::cout << *(intern->makeForm("shrubbery creation", "target")) << std::endl;
-	std::cout << *(intern->makeForm("presidential pardon", "target")) << std::endl;
-	std::cout << *(intern->makeForm("hot form", "target")) << std::endl;
+	try
+	{
+		std::cout << *(intern->makeForm("shrubbery creation", "target")) << std::endl;
+		std::cout << *(intern->makeForm("presidential pardon", "target")) << std::endl;
+		std::cout << *(intern->makeForm("hot form", "target")) << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	
 }
