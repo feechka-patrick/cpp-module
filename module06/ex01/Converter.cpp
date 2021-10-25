@@ -119,7 +119,9 @@ std::string Converter::toInt() const
 {
 	std::ostringstream os;
 
-	if (bordervalues(lit) != 0)
+	if (type == TypeChar)
+		os << static_cast<int>(lit[0]);
+	else if (bordervalues(lit) != 0)
 		os << "impossible";
 	else
 		os << atoi(lit.c_str());;
@@ -134,8 +136,9 @@ std::string Converter::toFloat() const
 		return (lit);
 	if (bordervalues(lit) == TypeDouble)
 		return (lit + "f");
-
-	os << atof(lit.c_str());
+	if (type == TypeChar)
+		os << static_cast<float>(lit[0]);
+	else os << atof(lit.c_str());
 	if ((os.str()).find('.') == std::string::npos)
 		os << ".0";
 	os << "f";
@@ -150,6 +153,11 @@ std::string Converter::toDouble() const
 		return (lit.substr(lit.size() - 1));
 	if (bordervalues(lit) == TypeDouble)
 		return (lit);
+	if (type == TypeChar)
+	{
+		os << static_cast<float>(lit[0]) << ".0";
+		return (os.str());
+	}
 	float fres = atof(lit.c_str());
 	os << static_cast<double>(fres);
 	if ((os.str()).find('.') == std::string::npos)
