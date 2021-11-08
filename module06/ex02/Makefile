@@ -9,7 +9,7 @@ DEPS = $(OBJ:.o=.d)
 
 DEPFLAGS = -MMD -MF $(@:.o=.d)
 
-NAME = ex01
+NAME = ex02
 
 CXX = clang++
 

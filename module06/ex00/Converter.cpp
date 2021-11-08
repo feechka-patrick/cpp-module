@@ -18,7 +18,7 @@ int Converter::bordervalues(std::string value) const
 
 bool Converter::checkInt(const std::string str)
 {
-	int i = 0;
+	size_t i = 0;
 
 	if (!_isdigit(str[i]) && str[i] != '-' && str[i] != '+')
 		return (false);
@@ -33,7 +33,7 @@ bool Converter::checkInt(const std::string str)
 
 bool Converter::checkFloat(std::string str)
 {
-	int i = 0;
+	size_t i = 0;
 	bool numcount = false;
 
 	if ((!_isdigit(str[i]) && str[i] != '-' 
@@ -53,7 +53,7 @@ bool Converter::checkFloat(std::string str)
 
 bool Converter::checkDouble(std::string str)
 {
-	int i = 0;
+	size_t i = 0;
 	bool numcount = false;
 
 	if ((!_isdigit(str[i]) && str[i] != '-' 
@@ -99,7 +99,7 @@ std::string Converter::toChar() const
 	{
 		if (lit[0] > 32 && lit[0] < 127)
 			return (lit);
-		if (lit[0] >= 0 && lit[0] <= 127)
+		if (lit[0] <= 0 && lit[0] >= 127)
 			return ("non displayable");
 	}
 	else if (bordervalues(lit) != 0)
@@ -107,8 +107,10 @@ std::string Converter::toChar() const
 	else
 	{
 		int numchar = atoi(lit.c_str());
-		if (numchar >= 0 && numchar <= 32)
+		if ((numchar >= 0 && numchar <= 32) || numchar >= 127)
 			return ("non displayable");
+		if (numchar < 0)
+			return ("impossible");
 		os << static_cast<char>(numchar);
 	}
 
@@ -150,7 +152,7 @@ std::string Converter::toDouble() const
 	std::ostringstream os;
 
 	if (bordervalues(lit) == TypeFloat)
-		return (lit.substr(lit.size() - 1));
+		return (lit.substr(0, lit.size() - 1));
 	if (bordervalues(lit) == TypeDouble)
 		return (lit);
 	if (type == TypeChar)
@@ -169,7 +171,10 @@ Converter::Converter(const Converter &obj)
 	: lit(obj.lit), type(obj.type) {}
 
 Converter& Converter::operator= (const Converter& obj) 
-	{ return (*this); }
+	{
+		this->type = obj.type;
+		return (*this);
+	}
 
 Converter::~Converter() {}
 

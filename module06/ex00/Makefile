@@ -1,5 +1,6 @@
 
 SRC = main.cpp\
+	Converter.cpp\
 	
 OBJ = $(SRC:.cpp=.o)
 
@@ -9,7 +10,7 @@ DEPS = $(OBJ:.o=.d)
 
 DEPFLAGS = -MMD -MF $(@:.o=.d)
 
-NAME = ex01
+NAME = convert
 
 CXX = clang++
 

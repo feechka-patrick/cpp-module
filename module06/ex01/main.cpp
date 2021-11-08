@@ -1,23 +1,27 @@
 #include <iostream>
-#include "Converter.hpp"
+#include <stdint.h>
+#include "structData.hpp"
 
-int main(int argc, char *argv[])
+uintptr_t serialize(Data* ptr)
 {
-	if (argc == 2)
-	{
-		try
-		{
-			Converter convert(argv[1]);
+    return reinterpret_cast<uintptr_t>(ptr);
+}
 
-			std::cout << "char: " << convert.toChar() << std::endl;
-			std::cout << "int: " << convert.toInt() << std::endl;
-			std::cout << "float: " << convert.toFloat() << std::endl;
-			std::cout << "double: " << convert.toDouble() << std::endl;
+Data* deserialize(uintptr_t raw)
+{
+    return reinterpret_cast<Data *>(raw);
+}
 
-		}
-		catch(const std::exception& e)
-		{
-			std::cerr << "LiteralInvalidException\n";
-		}
-	}
+int main()
+{
+    Data *sdata = new Data();
+    sdata->data = "EXX";
+
+    std::cout << "DATA: " << sdata->data << " | "
+        << sdata << std::endl;
+
+    uintptr_t raw = serialize(sdata);
+    std::cout << "SERIALIZE: " << raw << std::endl;
+    std::cout << "DESERIALIZE: " << deserialize(raw)->data 
+        << " | " << deserialize(raw) << std::endl;
 }
