@@ -11,3 +11,5 @@ MODULE 03: Inheritance
 MODULE 04: Subtype polymorphism, abstract classes, interfaces
 <br>
 MODULE 05: Repetition and Exceptions
+<br>
+MODULE 06: C++ Casts
