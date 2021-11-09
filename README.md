@@ -13,3 +13,5 @@ MODULE 04: Subtype polymorphism, abstract classes, interfaces
 MODULE 05: Repetition and Exceptions
 <br>
 MODULE 06: C++ Casts
+<br>
+MODULE 07: C++ Templates
