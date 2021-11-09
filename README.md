@@ -15,3 +15,6 @@ MODULE 05: Repetition and Exceptions
 MODULE 06: C++ Casts
 <br>
 MODULE 07: C++ Templates
+<br>
+MODULE 07: Templated containers, iterators, algorithms
+
