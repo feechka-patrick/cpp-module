@@ -16,5 +16,5 @@ MODULE 06: C++ Casts
 <br>
 MODULE 07: C++ Templates
 <br>
-MODULE 07: Templated containers, iterators, algorithms
+MODULE 08: Templated containers, iterators, algorithms
 
