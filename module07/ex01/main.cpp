@@ -1,23 +1,26 @@
 #include "iter.hpp"
 
-void fint(int &i)
-{
-	i++;
-}
+// class Awesome
+// {
+// 	private:
+// 		int _n;
+// 	public:
+// 		Awesome(void): _n(42) {}
+// 		int get() const {return _n;};
+
+// };
+// std::ostream &operator<<(std::ostream &o, const Awesome &a) {o << a.get(); return o;};
+
+template<typename T>
+void print(T const &x) {std::cout << x << std::endl; return;}
 
 int main()
 {
-	int array_int[] = {1, 2, 3, 4, 5, 6};
-	std::cout << "array:";
-	for (size_t i = 0; i < 6; i++)
-	{
-		std::cout << " " << array_int[i];
-	}
-	iter(array_int, 6, &fint);
-	std::cout << "\narray after iter:";
-	for (size_t i = 0; i < 6; i++)
-	{
-		std::cout << " " << array_int[i];
-	}
-	std::cout << "\n";
+	int tab[] = {0, 1, 2, 3, 4 };
+	std::string tab1[] = {"str0", "str1", "str2"};
+	// Awesome tab2[5];
+
+	::iter(tab, 5, print);
+	iter(tab1, 3, print);
+	// ::iter(tab2, 5, print);
 }
