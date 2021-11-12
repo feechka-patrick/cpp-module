@@ -7,6 +7,6 @@ class Base
 		virtual ~Base();
 };
 
-Base::~Base() {}
+Base::~Base(){}
 
 #endif
