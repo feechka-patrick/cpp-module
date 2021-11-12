@@ -3,8 +3,18 @@
 int main()
 {
 	Span span(10000);
-	for (int i = -5000; i < 5000; i++)
-		span.addNumber(i);
+	span.addNumber(-5000);
+
+	try
+	{
+		span.longestSpan();
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+
+	span.addRange(-4999, 4999);
 	try
 	{
 		span.addNumber(5000);

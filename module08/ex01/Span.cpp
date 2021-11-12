@@ -1,20 +1,30 @@
 # include "Span.hpp"
 
-Span::Span() : n(0), findex(0)
+Span::Span() : findex(0)
 {
-	array = new int[n];
+	array.resize(0);
 }
 
-Span::Span(unsigned int length) :  n(length), findex(0)
+Span::Span(unsigned int length) :  findex(0)
 {
-	array = new int[n];
+	array.resize(length);
 }
 
 void Span::addNumber(int number)
 {
-	if (findex == n)
+	if (findex == array.size())
 		throw Span::OverflowArrayException();
 	array[findex++] = number;
+}
+
+void Span::addRange(int lvalue, int rvalue)
+{
+	while (lvalue <= rvalue)
+	{
+		if (findex == array.size())
+			throw std::exception();
+		array[findex++] = lvalue++;
+	}
 }
 
 int Span::shortestSpan() const
@@ -49,25 +59,30 @@ int Span::longestSpan() const
 	return max - min;
 }
 
-Span::Span(const Span &obj) : n(obj.n), findex(obj.findex)
+Span::Span(const Span &obj) : findex(obj.findex)
 {
-	array = new int[n];
-	for (unsigned int i = 0; i < obj.n; i++)
+	array.resize(obj.array.size());
+	for (unsigned int i = 0; i < obj.findex; i++)
 		array[i] = obj.array[i];
+}
+
+const char* Span::OverflowArrayException::what() const throw()
+{
+	return ("OverflowArrayException");
+}
+
+const char* Span::UndersizedArrayException::what() const throw()
+{
+	return ("UndersizedArrayException");
 }
 
 Span& Span::operator= (const Span& obj)
 {
-	delete[] array;
-	n = obj.n;
+	array.resize(obj.array.size());
 	findex = obj.findex;
-	array = new int[n];
-	for (unsigned int i = 0; i < obj.n; i++)
+	for (unsigned int i = 0; i < obj.findex; i++)
 		array[i] = obj.array[i];
 	return (*this);
 }
 
-Span::~Span()
-{
-	delete[] array;
-} 
+Span::~Span() { } 

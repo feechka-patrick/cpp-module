@@ -9,11 +9,11 @@ int main()
 
 		std::vector<int>::iterator it = easyfind(v, 4);
 		for ( ; it != v.end(); ++it)
-		std::cout << *it << std::endl;
+			std::cout << *it << std::endl;
 
 		it = easyfind(v, 10);
 		for ( ; it != v.end(); ++it)
-		std::cout << *it << std::endl;
+			std::cout << *it << std::endl;
 	}
 
 	{
